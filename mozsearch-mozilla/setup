@@ -6,29 +6,29 @@ set -o pipefail # Check all commands in a pipeline
 
 date
 
-echo Downloading kaios repo
+echo Downloading mozsearch-mozilla repo
 pushd $INDEX_ROOT
 if [ -d "git" ]
 then
     echo "Found pre-existing folder; skipping re-download."
 else
-    wget -nv https://s3-us-west-2.amazonaws.com/searchfox.repositories/kaios.tar
-    tar xf kaios.tar
-    rm kaios.tar
+    wget -nv https://s3-us-west-2.amazonaws.com/searchfox.repositories/mozsearch-mozilla.tar.lz4
+    lz4 -dc mozsearch-mozilla.tar.lz4 | tar -x
+    rm mozsearch-mozilla.tar.lz4
 fi
 popd
 
 date
 
-echo Downloading kaios blame.
+echo Downloading mozsearch-mozilla blame.
 pushd $INDEX_ROOT
 if [ -d "blame" ]
 then
     echo "Found pre-existing blame folder; skipping re-download."
 else
-    wget -nv https://s3-us-west-2.amazonaws.com/searchfox.repositories/kaios-blame.tar
-    tar xf kaios-blame.tar
-    rm kaios-blame.tar
+    wget -nv https://s3-us-west-2.amazonaws.com/searchfox.repositories/mozsearch-mozilla-blame.tar.lz4
+    lz4 -dc mozsearch-mozilla-blame.tar.lz4 | tar -x
+    rm mozsearch-mozilla-blame.tar.lz4
 fi
 popd
 
@@ -36,7 +36,8 @@ date
 
 echo Updating git
 pushd $GIT_ROOT
-git pull
+git pull origin master
+
 popd
 
 echo Generating blame information

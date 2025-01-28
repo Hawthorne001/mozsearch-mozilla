@@ -11,6 +11,8 @@
       "index_path": "$WORKING/l10n",
       "files_path": "$WORKING/l10n/git",
       "git_path": "$WORKING/l10n/git",
+      "git_blame_path": "$WORKING/l10n/blame",
+      "github_repo": "https://github.com/mozilla-l10n/firefox-l10n",
       "objdir_path": "$WORKING/l10n/objdir",
       "codesearch_path": "$WORKING/l10n/livegrep.idx",
       "codesearch_port": 8081,
@@ -27,6 +29,10 @@
       "git_blame_path": "$WORKING/llvm/blame",
       "github_repo": "https://github.com/llvm/llvm-project",
       "objdir_path": "$WORKING/llvm/objdir",
+      "ignore_missing_path_prefixes": [
+        "$WORKING/llvm/objdir/CMakeFiles/CMakeScratch/",
+        "$WORKING/llvm/objdir/CMakeFiles/CMakeTmp/"
+      ],
       "codesearch_path": "$WORKING/llvm/livegrep.idx",
       "codesearch_port": 8082,
       "scip_subtrees": {}
@@ -151,21 +157,6 @@
       "scip_subtrees": {}
     },
 
-    "kaios": {
-      "priority": 50,
-      "on_error": "continue",
-      "cache": "codesearch",
-      "index_path": "$WORKING/kaios",
-      "files_path": "$WORKING/kaios/git",
-      "git_path": "$WORKING/kaios/git",
-      "git_blame_path": "$WORKING/kaios/blame",
-      "hg_root": "https://hg.mozilla.org/projects/kaios/",
-      "objdir_path": "$WORKING/kaios/objdir",
-      "codesearch_path": "$WORKING/kaios/livegrep.idx",
-      "codesearch_port": 8091,
-      "scip_subtrees": {}
-    },
-
     "mozilla-vpn-client": {
       "priority": 100,
       "on_error": "continue",
@@ -177,7 +168,7 @@
       "git_blame_path": "$WORKING/mozilla-vpn-client/blame",
       "objdir_path": "$WORKING/mozilla-vpn-client/objdir",
       "codesearch_path": "$WORKING/mozilla-vpn-client/livegrep.idx",
-      "codesearch_port": 8092,
+      "codesearch_port": 8091,
       "scip_subtrees": {}
     },
 
@@ -192,7 +183,7 @@
       "hg_root": "https://hg.mozilla.org/projects/elm",
       "objdir_path": "$WORKING/mozilla-elm/objdir",
       "codesearch_path": "$WORKING/mozilla-elm/livegrep.idx",
-      "codesearch_port": 8093,
+      "codesearch_port": 8092,
       "scip_subtrees": {}
     },
 
@@ -207,6 +198,21 @@
       "hg_root": "https://hg.mozilla.org/projects/cedar",
       "objdir_path": "$WORKING/mozilla-cedar/objdir",
       "codesearch_path": "$WORKING/mozilla-cedar/livegrep.idx",
+      "codesearch_port": 8093,
+      "scip_subtrees": {}
+    },
+
+    "mozilla-cypress": {
+      "priority": 200,
+      "on_error": "continue",
+      "cache": "codesearch",
+      "index_path": "$WORKING/mozilla-cypress",
+      "files_path": "$WORKING/mozilla-cypress/git",
+      "git_path": "$WORKING/mozilla-cypress/git",
+      "git_blame_path": "$WORKING/mozilla-cypress/blame",
+      "hg_root": "https://hg.mozilla.org/projects/cypress",
+      "objdir_path": "$WORKING/mozilla-cypress/objdir",
+      "codesearch_path": "$WORKING/mozilla-cypress/livegrep.idx",
       "codesearch_port": 8094,
       "scip_subtrees": {}
     }
